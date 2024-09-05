@@ -1,0 +1,480 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    font-family: "SF Pro JP", "SF Pro Display", "SF Pro Icons", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Basic styles */
+body {
+    background: url('Britain.jpg') no-repeat center center fixed; /* Set the background image */
+    background-size: cover; /* Ensure the image covers the entire background */
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+    z-index: 1000;
+}
+
+/* Wrapper for the nav items to create the dynamic island effect */
+.nav-wrapper {
+    background-color: #333; /* Make the nav wrapper background transparent */
+    border-radius: 40px; /* Start with Dynamic Island-like rounded corners */
+    width: 170px; /* Initial width */
+    height: 52px; /* Fixed height */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add shadow for floating effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 0.5s ease-in-out, border-radius 0.5s ease-in-out; /* Smooth transition */
+    position: fixed;
+    top: 10%; /* Vertically center */
+    left: 50%; /* Horizontally center */
+    transform: translate(-50%, -50%); /* Correct positioning */
+    cursor: pointer;
+    overflow: hidden; /* Ensure the child elements don't overflow */
+    padding: 0 10px; /* Add padding for text */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.nav-wrapper:hover {
+    width: 500px; /* Expand horizontally */
+    border-radius: 40px; /* Maintain the same rounded corners */
+}
+
+.nav-wrapper:hover .logo {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Fade out title */
+}
+
+.logo {
+    font-size: 27px;
+    color: #fff;
+    white-space: nowrap; /* Prevent text wrapping */
+    position: absolute; /* Ensure it's centered within the wrapper */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for fade */
+}
+
+/* Navigation links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease-in-out 0.3s; /* Delayed fade-in */
+    width: 100%;
+    justify-content: space-around; /* Evenly space the menu items */
+}
+
+.nav-wrapper:hover .nav-links {
+    opacity: 1; /* Show menu items when expanded */
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 0.5rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1); /* Slight transparency for items */
+    border-radius: 50px; /* Make the items elliptical */
+    transition: background-color 0.3s, transform 0.3s;
+    display: none; /* Initially hide items */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.nav-wrapper:hover .nav-item {
+    display: inline-block; /* Show items when expanded */
+}
+
+.nav-item:hover {
+    background-color: #0071e3; /* Slightly more opaque on hover */
+    transform: scale(1.05);
+}
+
+/* Hero section */
+.hero {
+    height: 59vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem; /* Margin reduced to narrow space */
+}
+
+.hero-content p {
+    font-family: 'Bradley Hand'; /* Change this to the desired font */
+    font-size: 27px;
+    margin-bottom: 1.5rem; /* Margin reduced to narrow space */
+}
+
+.btn {
+    padding: 1rem 2rem;
+    background-color: #0071e3;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 27px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Section styling */
+section {
+    padding: 5rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.post {
+    margin-bottom: 2rem;
+}
+
+.post h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-note {
+    font-size: 12px; /* 注釈のフォントサイズを小さくする */
+    background-color: rgba(0, 0, 0, 0.233);
+    color: #efefef; /* 灰色で目立ちすぎない色 */
+    padding: 1rem;
+    text-align: left;/* 注釈を中央揃えにする */
+    line-height: 1.5; /* 行間を少し広げて読みやすくする */
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.379); /* More opaque for footer */
+    color: #fff;
+}
+
+.footer .ac-gf-footer-legal-copyright {
+    font-size: 0.75rem; /* Reduced font size for copyright text */
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    -webkit-animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in-on-scroll {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    -webkit-transition: opacity 0.6s ease-in-out;
+}
+
+.fade-in-on-scroll.show {
+    opacity: 1;
+}
+
+.categories-container {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.category-item {
+    flex: 0 0 auto;
+    background-color: rgba(255, 255, 255, 0.95); /* Slight transparency for items */
+    border-radius: 14px;
+    padding: 1rem;
+    min-width: 200px;
+    text-align: center;
+    scroll-snap-align: start;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.category-item:hover {
+    transform: scale(1.05);
+}
+
+.categories-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contact-item {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #333; /* Border similar to the outline in the image */
+    border-radius: 27px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+.contact-item:hover {
+    background-color: #333;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.support-section {
+    background-color: #f9f9f9; /* Light grey background */
+    border-radius: 25px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    margin: 2rem auto;
+    max-width: 600px; /* Set a max-width for better layout */
+}
+
+.support-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333; /* Dark text color */
+}
+
+.support-section p {
+    font-size: 1rem;
+    color: #555; /* Slightly lighter text color */
+    margin-bottom: 1.5rem;
+}
+
+.contact-link {
+    color: #0071e3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.category-card {
+    min-width: 300px; /* Adjust based on your card size */
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.card-content .small-text {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.card-content h3 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.card-image {
+    position: relative;
+    margin-top: 1rem;
+}
+
+.card-image img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.popup-btn {
+    background-color: #333; /* Dark circle background */
+    color: #fff; /* White plus mark */
+    border: none;
+    border-radius: 50%; /* Makes the button a circle */
+    width: 48px; /* Adjusted width to match the appearance */
+    height: 48px; /* Adjusted height to match the appearance */
+    font-size: 24px; /* Adjust font size for the plus mark */
+    font-weight: bold; /* Bold plus mark */
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    z-index: 1000; /* Ensures the button is on top */
+
+    /* Flexbox for centering the plus mark */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Ensure there’s no padding/margin interfering with the clickable area */
+    padding: 0;
+    margin: 0;
+
+    /* Optional: Shadow for a more prominent button */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.popup-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1300;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 20px;
+    width: auto;
+    max-width: 900px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    background-color: #333; /* Dark circle background */
+    color: #ccc; /* Light gray 'X' */
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+
+    /* Flexbox to center the 'X' inside the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Correct positioning inside the modal */
+    position: absolute;
+    top: 20px; /* Move it above the content, but inside the modal */
+    right: 20px; /* Keep it to the right edge of the modal content */
+
+    /* Optional: Add a shadow */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.custom-font {
+    font-family: 'Arial', sans-serif; /* Change this to the desired font */
+    font-size: 18px; /* Adjust font size */
+    color: #333; /* Change text color */
+}
+
+.icon-image {
+    width: 214px; /* Adjust the size to your needs */
+    height: 214px; /* Keep width and height the same for a square */
+    border-radius: 50%; /* Makes the image circular */
+    display: block;
+    margin: 20px auto; /* Centers the image horizontally and adds margin */
+    border: 2px solid #dadada; /* Optional: Add a border around the icon */
+
+    /* Add a shadow to the icon */
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.382); /* Adjust the shadow effect */
+}
+
+.introduction-details ul {
+    list-style-type: disc;
+    padding-left: 0; /* 左側の余白をなくす */
+    margin-left: 70px; /* 左マージンを調整して赤線に揃える */
+    text-align: left;
+}
+
+.introduction-details li {
+    color: #333; /* 箇条書きの文字色を変更（例: トマト色） */
+    text-align: left; /* テキストを左揃え */
+    margin-bottom: 10px;
+    display: list-item; /* list-itemを指定して点を復活させる */
+    list-style-position: inside; /* 点を中央寄りに表示 */
+}
+
+.introduction {
+    text-align: left;
+    margin-bottom: 20px; /* 下にスペースを追加 */
+}
+
+.introduction-details {
+    margin-top: 20px; /* フレーズの下にスペースを追加 */
+}
+
+.custom-colour {
+    font-weight: bold;
+    color: #fce868;
+}
+
+/* 画像がドラッグされるのを防止 */
+img {
+    -webkit-user-drag: none; /* ChromeやSafari */
+    -khtml-user-drag: none;  /* 古いブラウザ */
+    -moz-user-drag: none;    /* Firefox */
+    -o-user-drag: none;
+}
+
+/* 画像や動画の選択を防ぐ */
+img, video {
+    -webkit-user-select: none; /* ChromeやSafari */
+    -khtml-user-select: none;
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;
+    user-select: none;         /* 標準対応ブラウザ */
+}
