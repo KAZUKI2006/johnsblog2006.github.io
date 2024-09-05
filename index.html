@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-wrapper">
+            <div class="logo">John Blog</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-item">Home</a></li>
+                <li><a href="#about" class="nav-item">About</a></li>
+                <li><a href="#blog" class="nav-item">Blog</a></li>
+                <li><a href="#contact" class="nav-item">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content fade-in">
+            <h1>ここは、気まぐれに自分の好きなことやものについて呟くブログ</h1>
+            <p>There is nothing either good or bad,but thinking makes it so.</p>
+            <a href="#blog" class="btn">Explore</a>
+        </div>
+    </section>
+
+    <section id="about" class="support-section fade-in-on-scroll">
+        <h2>About Me</h2>
+        <div class="icon-container">
+            <img src="Me .PNG" alt="Your Icon" class="icon-image">
+        </div>
+        <p>Appleとズートピアが大好きな法学部の大学生</p>
+
+         <!-- スペースを追加 -->
+    <div class="introduction-details">
+        <ul>
+            <li class="intro-item">趣味：読書と映画鑑賞、(数少ない)友達と喋ったり旅行すること</li>
+            <li class="intro-item">興味分野：法律とテクノロジー</li>
+            <li class="intro-item">好きなキャラクター：Nick(Zootpia)</li>
+            <li class="intro-item">好きな人物：Sherlock Holmes</li>
+            <li class="intro-item">憧れてる人物：Steve Jobs</li>
+            <li class="intro-item">目標：弁護士を目指して勉強中</li>
+        </ul>
+    </div>
+    </section>
+
+    <section id="blog" class="blog fade-in-on-scroll">
+        <h2>Blog Posts</h2>
+        <div class="scroll-container">
+            <!-- Apple Section -->
+            <div class="category-card">
+                <div class="card-content">
+                    <p class="small-text">List of the latest articles</p>
+                    <h3>Apple</h3>
+                    <button class="popup-btn" data-modal="apple-modal">＋</button>
+                </div>
+                <div class="card-image">
+                    <img src="Apple.PNG" alt="Apple">
+                </div>
+            </div>
+    
+            <!-- Zootopia Section -->
+            <div class="category-card">
+                <div class="card-content">
+                    <p class="small-text">List of the latest articles</p>
+                    <h3>Zootopia</h3>
+                    <button class="popup-btn" data-modal="zootopia-modal">＋</button>
+                </div>
+                <div class="card-image">
+                    <img src="Nick.PNG" alt="Zootopia">
+                </div>
+            </div>
+    
+            <!-- Gadgets Section -->
+            <div class="category-card">
+                <div class="card-content">
+                    <p class="small-text">List of the latest articles</p>
+                    <h3>Gadgets</h3>
+                    <button class="popup-btn" data-modal="gadgets-modal">＋</button>
+                </div>
+                <div class="card-image">
+                    <img src="Gadget.PNG" alt="Gadgets">
+                </div>
+            </div>
+    
+            <!-- British Section -->
+            <div class="category-card">
+                <div class="card-content">
+                    <p class="small-text">List of the latest articles</p>
+                    <h3>British</h3>
+                    <button class="popup-btn" data-modal="British-modal">＋</button>
+                </div>
+                <div class="card-image">
+                    <img src="British.PNG" alt="British">
+                </div>
+            </div>
+    
+            <!-- Daily Section -->
+            <div class="category-card">
+                <div class="card-content">
+                    <p class="small-text">List of the latest articles</p>
+                    <h3>Daily</h3>
+                    <button class="popup-btn" data-modal="daily-modal">＋</button>
+                </div>
+                <div class="card-image">
+                    <img src="Daily.PNG" alt="Daily">
+                </div>
+            </div>
+    
+            <!-- University Section -->
+            <div class="category-card">
+                <div class="card-content">
+                    <p class="small-text">List of the latest articles</p>
+                    <h3>University</h3>
+                    <button class="popup-btn" data-modal="university-modal">＋</button>
+                </div>
+                <div class="card-image">
+                    <img src="Uni.PNG" alt="University">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals go here, before the closing body tag -->
+    <!-- Apple Modal -->
+    <div id="apple-modal" class="popup-modal">
+        <div class="popup-content">
+            <button class="close-btn">×</button>
+            <h2>Apple</h2>
+            <p class="custom-font">More information about Apple...</p>
+        </div>
+    </div>
+
+    <!-- Zootopia Modal -->
+    <div id="zootopia-modal" class="popup-modal">
+        <div class="popup-content">
+            <button class="close-btn">×</button>
+            <h2>Zootopia</h2>
+            <p class="custom-font">More information about Zootopia...</p>
+        </div>
+    </div>
+
+    <!-- Gadgets Modal -->
+    <div id="gadgets-modal" class="popup-modal">
+        <div class="popup-content">
+            <button class="close-btn">×</button>
+            <h2>Gadgets</h2>
+            <p class="custom-font">More information about Gadgets...</p>
+        </div>
+    </div>
+
+    <!-- British Modal -->
+    <div id="British-modal" class="popup-modal">
+        <div class="popup-content">
+            <button class="close-btn">×</button>
+            <h2>British</h2>
+            <p class="custom-font">More information about British...</p>
+        </div>
+    </div>
+
+    <!-- Daily Modal -->
+    <div id="daily-modal" class="popup-modal">
+        <div class="popup-content">
+            <button class="close-btn">×</button>
+            <h2>Daily</h2>
+            <p class="custom-font">More information about Daily...</p>
+        </div>
+    </div>
+
+    <!-- University Modal -->
+    <div id="university-modal" class="popup-modal">
+        <div class="popup-content">
+            <button class="close-btn">×</button>
+            <h2>University</h2>
+            <p class="custom-font">More information about University...</p>
+        </div>
+    </div>
+
+    <section id="contact" class="support-section fade-in-on-scroll">
+        <h2>Contact Me</h2>
+        <div class="contact-links">
+            <a href="https://www.instagram.com/your_instagram" target="_blank" class="contact-item">Instagram</a>
+            <a href="https://twitter.com/your_twitter" target="_blank" class="contact-item">X(Twitter)</a>
+            <a href="john_v.r.2006@icloud.com" class="contact-item">Email</a>
+        </div>
+    </section>
+
+    <div class="footer-note">
+        <p>1.すべての内容は個人的な意見です。参考にされる際はご自身で確認をお願いいたします。</p>
+        <p class="custom-colour">2.このブログで提供される法律に関する情報は、一般的な情報提供を目的としており、法的なアドバイスを提供するものではありません。詳細な助言や個別の相談については、専門の法律家にご相談ください。</p>
+        <p>3.当サイトで提供される情報は、できる限り正確であるよう努めていますが、すべての情報が最新で正確であることを保証するものではありません。</p>
+        <p>4.外部リンク先のコンテンツについては当サイトが管理しておらず、リンク先で提供される情報やサービスに関して一切の責任を負いません。</p>
+        <p>5.当サイトのコンテンツを使用する際には、ご自身の責任で行ってください。コンテンツを利用した結果生じたいかなる損害についても、当サイトは責任を負いません。</p>
+        <p>6.当サイトでは、訪問者のプライバシーを尊重し、個人情報の取り扱いについてはプライバシーポリシーに従って適切に行います。</p>
+        <p class="custom-colour">7.当サイトには、アフィリエイト広告が含まれており、リンクを通じて商品やサービスを購入された場合、当サイトが報酬を受け取ることがあります。</p>
+        <p>8.当サイトでは、クッキーやトラッキング技術を使用しています。詳細はプライバシーポリシーをご覧ください。</p>
+        <p class="custom-colour">9.当サイトで使用しているイラスト、画像、および動画は、出典が記載されているもの以外、すべてオリジナルのものです。これらのオリジナルコンテンツに対しては、著作権法に基づき無断での使用、転載、配布を禁止しています。無断での使用や転載が発覚した場合、法的措置を講じる可能性があります。コンテンツの使用については、事前に運営者にお問い合わせください。</p>
+    </div>
+
+    <footer class="footer">
+        <div class="ac-gf-footer-legal-copyright">Copyright ©︎ 2024 Apple Inc. All rights reserved. </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
