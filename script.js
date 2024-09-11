@@ -9,8 +9,12 @@ window.addEventListener('scroll', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const navWrapper = document.querySelector('.nav-wrapper');
-    
     let touchTimer;
+
+    // Function to collapse dynamic island
+    function collapseDynamicIsland() {
+        navWrapper.classList.remove('expanded');
+    }
 
     // Long press for iPhone/iPad (touch devices)
     navWrapper.addEventListener('touchstart', function() {
@@ -21,9 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     navWrapper.addEventListener('touchend', function() {
         clearTimeout(touchTimer);
-        navWrapper.classList.remove('expanded');
     });
-    
+
     // Mouse hover for Mac (non-touch devices)
     if (!('ontouchstart' in window)) {
         navWrapper.addEventListener('mouseenter', function() {
@@ -33,6 +36,20 @@ document.addEventListener('DOMContentLoaded', function() {
             navWrapper.classList.remove('expanded');
         });
     }
+
+    // Close dynamic island when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!navWrapper.contains(event.target)) {
+            collapseDynamicIsland();
+        }
+    });
+
+    // Close dynamic island when touching outside of it on touch devices
+    document.addEventListener('touchstart', function(event) {
+        if (!navWrapper.contains(event.target)) {
+            collapseDynamicIsland();
+        }
+    });
 });
 
 document.querySelectorAll('.category-item').forEach(item => {
