@@ -7,6 +7,34 @@ window.addEventListener('scroll', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const navWrapper = document.querySelector('.nav-wrapper');
+    
+    let touchTimer;
+
+    // Long press for iPhone/iPad (touch devices)
+    navWrapper.addEventListener('touchstart', function() {
+        touchTimer = setTimeout(function() {
+            navWrapper.classList.add('expanded');
+        }, 500); // Long press duration (500ms)
+    });
+
+    navWrapper.addEventListener('touchend', function() {
+        clearTimeout(touchTimer);
+        navWrapper.classList.remove('expanded');
+    });
+    
+    // Mouse hover for Mac (non-touch devices)
+    if (!('ontouchstart' in window)) {
+        navWrapper.addEventListener('mouseenter', function() {
+            navWrapper.classList.add('expanded');
+        });
+        navWrapper.addEventListener('mouseleave', function() {
+            navWrapper.classList.remove('expanded');
+        });
+    }
+});
+
 document.querySelectorAll('.category-item').forEach(item => {
     item.addEventListener('click', () => {
         // Add the behavior you want when a category is clicked
