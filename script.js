@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close dynamic island when clicking outside of it
     document.addEventListener('click', function(event) {
+        // Check if the clicked element is inside the navWrapper
         if (!navWrapper.contains(event.target)) {
             collapseDynamicIsland();
         }
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close dynamic island when touching outside of it on touch devices
     document.addEventListener('touchstart', function(event) {
+        // Check if the touched element is inside the navWrapper
         if (!navWrapper.contains(event.target)) {
             collapseDynamicIsland();
         }
