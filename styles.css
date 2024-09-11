@@ -53,6 +53,17 @@ body {
     transition: opacity 0.5s ease-in-out; /* Fade out title */
 }
 
+.nav-wrapper.expanded {
+    width: 500px; /* Expand horizontally */
+    border-radius: 22px; /* Maintain the same rounded corners */
+    transition: width 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+}
+
+.nav-wrapper.expanded .logo {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
 .logo {
     font-size: 27px;
     color: #fff;
