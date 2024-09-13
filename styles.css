@@ -481,6 +481,13 @@ img {
     -o-user-drag: none;
 }
 
+img {
+    -webkit-user-select: none; /* Prevent selection on Safari and Chrome */
+    -webkit-touch-callout: none; /* Disable long press options on iOS */
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight color on mobile devices */
+    user-select: none; /* Prevent text selection */
+}
+
 /* 画像や動画の選択を防ぐ */
 img, video {
     -webkit-user-select: none; /* ChromeやSafari */
