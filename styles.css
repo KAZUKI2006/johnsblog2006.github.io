@@ -45,7 +45,7 @@ body {
 
 .nav-wrapper:hover {
     width: 500px; /* Expand horizontally */
-    border-radius: 40px; /* Maintain the same rounded corners */
+    border-radius: 50px; /* Maintain the same rounded corners */
 }
 
 .nav-wrapper:hover .logo {
