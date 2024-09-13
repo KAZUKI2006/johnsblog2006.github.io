@@ -96,3 +96,16 @@ document.addEventListener('contextmenu', function(event) {
     alert('この画像は保護されています。無断でのコピーは禁止です。');
     event.preventDefault();
 });
+
+// Disable right-click and long press on images
+document.addEventListener('contextmenu', function(event) {
+    if (event.target.tagName === 'IMG') {
+        event.preventDefault(); // Prevent right-click context menu
+    }
+});
+
+document.addEventListener('touchstart', function(event) {
+    if (event.target.tagName === 'IMG') {
+        event.preventDefault(); // Prevent long press on images
+    }
+}, { passive: false });
