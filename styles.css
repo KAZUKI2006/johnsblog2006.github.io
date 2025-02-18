@@ -55,7 +55,7 @@ body {
 
 .nav-wrapper.expanded {
     width: 500px; /* Expand horizontally */
-    border-radius: 40px; /* Maintain the same rounded corners */
+    border-radius: 50px; /* Maintain the same rounded corners */
     transition: width 0.5s ease-in-out, border-radius 0.5s ease-in-out;
 }
 
